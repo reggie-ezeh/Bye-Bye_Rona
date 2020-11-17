@@ -103,7 +103,6 @@ public class Viruses : MonoBehaviour
         virus_can_move = true;
 
         size = GetComponent<Collider2D>().bounds.size;
-
     }
 
     void Update()
@@ -187,10 +186,19 @@ public class Viruses : MonoBehaviour
     {
         if (VirusController.instance.viruses_can_move)
         {
+            if (!is_boss)
+            {
+                virus_speed = Mathf.Lerp(VirusController.instance.min_virus_speed, VirusController.instance.max_virus_speed,
+                GameController.instance.GetDifficultyPercent());
+            }
+            else
+            {
+                virus_speed = 10;
+            }
+
             //if the virus has not reach its desired position move there, otherwise calculate a new position
             if ((Vector2)transform.position != target)
             {
-                virus_speed = Mathf.Lerp(min_speed, max_speed, GameController.instance.GetDifficultyPercent());
                 transform.position = Vector2.MoveTowards(transform.position, target, virus_speed * Time.deltaTime);
             }
             else

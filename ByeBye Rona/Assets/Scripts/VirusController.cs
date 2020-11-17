@@ -41,6 +41,9 @@ public class VirusController : Singleton<VirusController>
     [SerializeField]
     float virus_expire_rate;
 
+    public float min_virus_speed;
+    public float max_virus_speed;
+
     //wait this amount of time before the very first spawn
     int start_wait = 2;
 
@@ -48,7 +51,6 @@ public class VirusController : Singleton<VirusController>
     public bool viruses_can_expire { get; set; }
     public bool viruses_can_move { get; set; }
     public bool viruses_can_upgrade { get; set; }
-
 
     /* A doubly linked list is used to contain the viruses because it is efficient remove items from the list
      * Also, a queue can be easily implemented using a linked list and the que would allow us to efficiently

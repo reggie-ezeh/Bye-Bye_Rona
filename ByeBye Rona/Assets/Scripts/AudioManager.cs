@@ -88,5 +88,4 @@ public class AudioManager : MonoBehaviour
 		int sfx_muted = PlayerPrefs.GetInt("SfxMuted");
 		MainaudioMixer.SetFloat("SfxVolume", (sfx_muted == 1) ? -80 : sfx_preset);
 	}
-
 }

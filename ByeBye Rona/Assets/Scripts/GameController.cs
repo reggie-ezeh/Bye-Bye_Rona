@@ -22,6 +22,8 @@ public class GameController : Singleton<GameController>
     [SerializeField]
     TextMeshProUGUI high_score_text;
 
+    public bool high_score_acheived { get; set; }
+
     float current_score;
     float high_score;
 
@@ -29,9 +31,10 @@ public class GameController : Singleton<GameController>
     int virus_population_max;
 
     //turn this off when soap is out
-    public bool playing;
+    public bool playing { get; set; }
+    public bool game_over { get; set; }
+    public bool is_paused { get; set; }
 
-    public bool game_over;
 
     [SerializeField]
     Image population_bar;
@@ -44,6 +47,9 @@ public class GameController : Singleton<GameController>
     [SerializeField]
     GameObject game_over_screen;
 
+    [SerializeField]
+    GameObject paused_screen;
+
     public float seconds_to_max_difficulty;
 
 
@@ -53,6 +59,9 @@ public class GameController : Singleton<GameController>
         population_bar = population_bar.GetComponent<Image>();
         game_over_screen.SetActive(false);
         game_over = false;
+        paused_screen.SetActive(false);
+        is_paused = false;
+        high_score_acheived = false;
         current_score = 0;
         current_virus_population = 0;
         Time.timeScale = 1;
@@ -117,12 +126,21 @@ public class GameController : Singleton<GameController>
         }
     }
 
+    public void PauseGame()
+    {
+        if (!game_over)
+        {
+            paused_screen.SetActive(true);
+            AdManager.ShowBanner();
+            Time.timeScale = 0;
+            is_paused = true;
+        }
+    }
+
     public void EndGame()
     {
         game_over = true;
         timer_text.color = Color.red;
-
-        game_over_screen.SetActive(true);
 
         if (current_score > PlayerPrefs.GetFloat("HighScore") )
         {
@@ -136,10 +154,16 @@ public class GameController : Singleton<GameController>
 
         int new_playtime= PlayerPrefs.GetInt("GamesPlayed") + 1;
         PlayerPrefs.SetInt("GamesPlayed", new_playtime);
+
+        AdManager.ShowBanner();
+        game_over_screen.SetActive(true);
+
+        game_over_screen.GetComponent<GameOverMenu>().GenerateMessage();
     }
 
     void SetHighScore()
     {
+        high_score_acheived=true;
         PlayerPrefs.SetFloat("HighScore", current_score);
         high_score= PlayerPrefs.GetFloat("HighScore");
 
@@ -147,7 +171,5 @@ public class GameController : Singleton<GameController>
         int seconds = Mathf.FloorToInt(high_score % 60f);
         int milliseconds = Mathf.FloorToInt((high_score * 100f) % 100f);
         high_score_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
-
-        //Display message "NEW High Score: PlayerPrefs.GetInt("Highscore") "
     }
 }

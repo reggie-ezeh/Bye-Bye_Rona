@@ -35,12 +35,6 @@ public class Extras : MonoBehaviour
         credits_page.SetActive(true);
     }
 
-
-    public void WilliamIG()
-    {
-        Application.OpenURL("http://www.instagram.com/willswift/");
-    }
-
     public void WebsiteLinker(string url)
     {
         Application.OpenURL(url);

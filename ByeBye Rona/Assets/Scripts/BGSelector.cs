@@ -22,6 +22,8 @@ public class BGSelector : MonoBehaviour
     Button Ad_button;
     [SerializeField]
     Button SelectBg_button;
+    [SerializeField]
+    TextMeshProUGUI Ad_failed_message;
 
     int current_BG_index;
     //used to tell when a the user has moved
@@ -34,6 +36,7 @@ public class BGSelector : MonoBehaviour
         player_current_bg = PlayerPrefs.GetInt("SelectedBackground");
         PlayerPrefs.SetInt("BG0_Status", 1);
         old_pointer = -1;
+        Ad_failed_message.gameObject.SetActive(false);
     }
 
     void Update()
@@ -60,7 +63,6 @@ public class BGSelector : MonoBehaviour
             }
         }
 
-
         for (int i = 0; i < pos.Length; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
@@ -68,16 +70,8 @@ public class BGSelector : MonoBehaviour
                 current_BG_index = i;
                 if (old_pointer != current_BG_index)
                 {
-                    if (player_current_bg != current_BG_index)
-                    {
                         ResetChoices();
                         CheckBgStatus();
-                    }
-                    else
-                    {
-                        ResetChoices();
-                        selected_bg_notification.gameObject.SetActive(true);
-                    }
 
                     old_pointer = current_BG_index;
                 }
@@ -116,7 +110,14 @@ public class BGSelector : MonoBehaviour
         }
         else
         {
-            SelectBg_button.gameObject.SetActive(true);
+            if (player_current_bg == current_BG_index)
+            {
+                selected_bg_notification.gameObject.SetActive(true);
+            }
+            else
+            {
+                SelectBg_button.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -135,22 +136,50 @@ public class BGSelector : MonoBehaviour
 
     public void WatchAd()
     {
-
+        AdManager.ShowRewardedAd(MakeBgAvailable, AdSkipped, AdFailed);
     }
 
     //after the player has watched the ad
-    public void MakeBgAvailable()
+    void MakeBgAvailable()
     {
         string bg_status_key = "BG"+current_BG_index.ToString()+"_Status";
         PlayerPrefs.SetInt(bg_status_key, 1);
+        CheckBgStatus();
     }
+
 
     //when player clicks to select a background
     public void SelectBg()
     {
         PlayerPrefs.SetInt("SelectedBackground", current_BG_index);
-        selected_bg_notification.gameObject.SetActive(true);
-        SelectBg_button.gameObject.SetActive(false);
+        player_current_bg = PlayerPrefs.GetInt("SelectedBackground");
+
+        ResetChoices();
+        CheckBgStatus();
     }
 
+    void AdSkipped()
+    {
+        StartCoroutine(SkipMessage());
+    }
+
+    void AdFailed()
+    {
+        StartCoroutine(FailMessage());
+    }
+
+    IEnumerator SkipMessage()
+    {
+        Ad_failed_message.gameObject.SetActive(true);
+        Ad_failed_message.text = "Ad skipped; Failed to Unlock Background";
+        yield return new WaitForSeconds(3);
+        Ad_failed_message.gameObject.SetActive(false);
+    }
+    IEnumerator FailMessage()
+    {
+        Ad_failed_message.gameObject.SetActive(true);
+        Ad_failed_message.text = "Ad failed to load";
+        yield return new WaitForSeconds(3);
+        Ad_failed_message.gameObject.SetActive(false);
+    }
 }

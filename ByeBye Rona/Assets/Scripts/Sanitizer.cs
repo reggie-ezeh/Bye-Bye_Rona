@@ -9,9 +9,6 @@ using UnityEngine.UI;
 
 public class Sanitizer : MonoBehaviour
 {
-    [SerializeField]
-    PausedMenu pausedMenu;
-
     private Rigidbody2D rb;
 
     public GameObject bullet;
@@ -33,6 +30,8 @@ public class Sanitizer : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
 
+    Vector2 size;
+
     [SerializeField]
     Image left_boundary;
     [SerializeField]
@@ -53,9 +52,11 @@ public class Sanitizer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         projectile = bullet;
         can_fire = true;
+        size = GetComponent<Collider2D>().bounds.size;
 
         fixed_y_movement = (bottom_boundary.rectTransform.position.y
         + screen_bottom.rectTransform.position.y)/1.75f ;
+        
     }
 
     // Update is called once per frame
@@ -73,7 +74,7 @@ public class Sanitizer : MonoBehaviour
 
     public void Movement()
     {
-        if (!pausedMenu.is_paused && Input.touchCount > 0)
+        if (!GameController.instance.is_paused && Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
@@ -96,7 +97,7 @@ public class Sanitizer : MonoBehaviour
 
     public void Shooter()
     {
-        if (!pausedMenu.is_paused && Input.touchCount > 0 && can_fire  )
+        if (!GameController.instance.is_paused && Input.touchCount > 0 && can_fire  )
         {
             Touch user_touch = Input.GetTouch(0);
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(user_touch.position);
@@ -104,7 +105,7 @@ public class Sanitizer : MonoBehaviour
             if (touchPos.x > left_boundary.rectTransform.position.x && touchPos.x < right_boundary.rectTransform.position.x)
             {
                 GameObject bull = Instantiate(projectile);
-                bull.transform.position = new Vector3(transform.position.x, transform.position.y + 1.4f, transform.position.z);
+                bull.transform.position = new Vector3(transform.position.x, transform.position.y + (.5f* size.y), transform.position.z);
                 //AudioManager.instance.Play("SanitizerShoot");
                 StartCoroutine(FireRateController());
             }
