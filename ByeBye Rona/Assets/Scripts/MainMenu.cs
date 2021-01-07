@@ -41,11 +41,6 @@ public class MainMenu : MonoBehaviour
 
     public void OpenLeaderboard()
     {
-        //AdManager.ShowStandardAd();
-        //SceneManager.LoadScene(5);
-        //Time.timeScale = 1;
-        PlayerPrefs.DeleteKey("SoapPercentage");
-        PlayerPrefs.DeleteKey("MaskTime");
-        PlayerPrefs.DeleteKey("VaccineTime");
+        //PlayerPrefs.DeleteAll();
     }
 }

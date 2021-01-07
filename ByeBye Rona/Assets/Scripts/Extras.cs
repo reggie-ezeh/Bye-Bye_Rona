@@ -9,7 +9,6 @@ public class Extras : MonoBehaviour
     public GameObject howtoHelp_page;
     public GameObject credits_page;
 
-
     public void Start()
     {
         extrasMenu.SetActive(true);
@@ -28,7 +27,6 @@ public class Extras : MonoBehaviour
         howtoHelp_page.SetActive(true);
     }
 
-
     public void OpenCredits()
     {
         extrasMenu.SetActive(false);
@@ -38,5 +36,11 @@ public class Extras : MonoBehaviour
     public void WebsiteLinker(string url)
     {
         Application.OpenURL(url);
+    }
+
+    public void ExtrasMain(GameObject current_page)
+    {
+        current_page.SetActive(false);
+        extrasMenu.SetActive(true);
     }
 }

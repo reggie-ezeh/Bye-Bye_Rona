@@ -38,8 +38,6 @@ public class VirusController : Singleton<VirusController>
     float min_spawn_rate;
     [SerializeField]
     float max_spawn_rate;
-    [SerializeField]
-    float virus_expire_rate;
 
     public float min_virus_speed;
     public float max_virus_speed;
@@ -49,6 +47,7 @@ public class VirusController : Singleton<VirusController>
 
     public bool viruses_can_spawn { get; set; }
     public bool viruses_can_expire { get; set; }
+    public bool viruses_upgrader_paused { get; set; }
     public bool viruses_can_move { get; set; }
     public bool viruses_can_upgrade { get; set; }
 
@@ -74,12 +73,17 @@ public class VirusController : Singleton<VirusController>
         right_edge = right_boundary.rectTransform.position.x;
         bottom_edge = bottom_boundary.rectTransform.position.y;
 
+        StartCoroutine(SpeedController());
         StartCoroutine(VirusSpawner());
     }
 
-    void Update()
+    IEnumerator SpeedController()
     {
-        virus_spawn_rate = Mathf.Lerp(min_spawn_rate, max_spawn_rate, GameController.instance.GetDifficultyPercent());
+        while (!GameController.instance.game_over)
+        {
+            virus_spawn_rate = Mathf.Lerp(min_spawn_rate, max_spawn_rate, GameController.instance.GetDifficultyPercent());
+            yield return new WaitForSeconds(start_wait);
+        }
     }
 
     IEnumerator VirusSpawner()
@@ -104,8 +108,7 @@ public class VirusController : Singleton<VirusController>
             {
                 virus_indices = virus_indices.OrderBy(x => Random.value).ToList();
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(virus_spawn_rate);
         }
     }
-
 }

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class VirusHealthBar : MonoBehaviour
 {
     public Slider slider;
-    public Color low;
-    public Color high;
     public Vector3 offset;
     Canvas canvas;
 
@@ -23,10 +21,6 @@ public class VirusHealthBar : MonoBehaviour
         slider.gameObject.SetActive(health < maxhealth);
         slider.value = health;
         slider.maxValue = maxhealth;
-
-        //adjusts color based on the percentage
-        //slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, slider);
-
     }
     void Update()
     {

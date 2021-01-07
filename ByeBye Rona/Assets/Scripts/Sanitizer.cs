@@ -7,7 +7,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sanitizer : MonoBehaviour
+public class Sanitizer : Singleton<Sanitizer>
 {
     private Rigidbody2D rb;
 
@@ -17,8 +17,12 @@ public class Sanitizer : MonoBehaviour
 
     private bool can_fire;
 
-    [SerializeField]
     float fire_rate;
+    [SerializeField]
+    float sanitizer_fire_rate;
+    [SerializeField]
+    float vaccine_fire_rate;
+
     // dont endable when the soap comes
     public bool enable_shooter= true;
 
@@ -43,6 +47,19 @@ public class Sanitizer : MonoBehaviour
 
     float fixed_y_movement;
 
+
+    [SerializeField]
+    private Sprite sanitizer_image;
+    [SerializeField]
+    private Sprite vaccine_image;
+
+    [SerializeField]
+    GameObject sanitizer_pallet;
+    [SerializeField]
+    GameObject vaccineShot;
+
+    float vaccine_time;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,21 +73,19 @@ public class Sanitizer : MonoBehaviour
 
         fixed_y_movement = (bottom_boundary.rectTransform.position.y
         + screen_bottom.rectTransform.position.y)/1.75f ;
-        
+        fire_rate = sanitizer_fire_rate;
+        vaccine_time = PlayerPrefs.GetFloat("VaccineTime");
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-
         if (enable_shooter)
         {
             Shooter();
         }
-
     }
-
 
     public void Movement()
     {
@@ -89,9 +104,7 @@ public class Sanitizer : MonoBehaviour
                 if (touch.phase == TouchPhase.Ended)
                     rb.velocity = Vector2.zero;
             }
-
         }
-
     }
 
 
@@ -120,10 +133,25 @@ public class Sanitizer : MonoBehaviour
         can_fire=true;
     }
 
+    public IEnumerator SummonVaccine()
+    {
+        spriteRenderer.sprite = vaccine_image;
+        projectile = vaccineShot;
+        fire_rate = vaccine_fire_rate;
+        DisplaySyringe();
+        yield return new WaitForSeconds(vaccine_time);
+        fire_rate = sanitizer_fire_rate;
+        spriteRenderer.sprite = sanitizer_image;
+        projectile = sanitizer_pallet;
+        PowerUpController.instance.power_up_currently_active = false;
+    }
+
     public void DisplaySyringe()
     {
         transform.position = bottom_boundary.rectTransform.position;
     }
+
+
 }
     
 

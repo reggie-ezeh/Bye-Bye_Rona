@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 //This will be the base class for the viruses
 public class Viruses : MonoBehaviour
 {
-
     //used to check if the virus has been hit
     public int original_health;
     public int current_health;
@@ -22,7 +21,7 @@ public class Viruses : MonoBehaviour
     //fields to animate when the virus gets hit
     private Material mat_flash;
     private Material mat_default;
-    private Object explosionRef;
+    private UnityEngine.Object explosionRef;
 
     Vector2 size;
 
@@ -47,6 +46,9 @@ public class Viruses : MonoBehaviour
 
     // stronger viruses take longer to upgrade
     [SerializeField]
+    float min_time_to_upgrade;
+    [SerializeField]
+    float max_time_to_upgrade;
     float time_to_upgrade;
 
     [SerializeField]
@@ -55,7 +57,13 @@ public class Viruses : MonoBehaviour
 
     // stronger viruses take longer to expire (aka lifespan)
     [SerializeField]
+    float min_time_to_expire;
+    [SerializeField]
+    float max_time_to_expire;
     float time_to_expire;
+
+    bool restart_expire;
+    bool restart_upgrade;
 
     //Fields for boss and minion
     [SerializeField]
@@ -71,6 +79,7 @@ public class Viruses : MonoBehaviour
     [SerializeField]
     float minion_spawn_rate;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +88,10 @@ public class Viruses : MonoBehaviour
         killed = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         upgrading = false;
-      
+
+        time_to_upgrade = Mathf.Lerp(min_time_to_upgrade, max_time_to_upgrade, GameController.instance.GetDifficultyPercent());
+        time_to_expire = Mathf.Lerp(min_time_to_expire, max_time_to_expire, GameController.instance.GetDifficultyPercent());
+
         if (upgradable_virus && VirusController.instance.viruses_can_upgrade && !GameController.instance.game_over)
         {
             StartCoroutine(Upgrader());
@@ -103,6 +115,9 @@ public class Viruses : MonoBehaviour
         virus_can_move = true;
 
         size = GetComponent<Collider2D>().bounds.size;
+
+        GameEvents.instance.onMaskExit += onMaskExit_action;
+        GameEvents.instance.onSoapExit += onSoapExit_action;
     }
 
     void Update()
@@ -160,10 +175,16 @@ public class Viruses : MonoBehaviour
 
     public IEnumerator Death()
     {
+        GameEvents.instance.onMaskExit -= onMaskExit_action;
+        GameEvents.instance.onSoapExit -= onSoapExit_action;
+
         if (!upgrading)
         {
             if (killed)
             {
+                PowerUpController.instance.AddKills();
+                PowerUpController.instance.CheckReward();
+                GameController.instance.killers += 1;
                 GameObject explosion = (GameObject)(Instantiate(explosionRef));
                 explosion.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             }
@@ -216,8 +237,8 @@ public class Viruses : MonoBehaviour
         float bottommost= VirusController.instance.bottom_edge + (.5f * size.y);
         float topmost = VirusController.instance.top_edge - (.5f * size.y);
 
-        float random_xpos = Random.Range(leftmost, rightmost);
-        float random_ypos = Random.Range(bottommost, topmost);
+        float random_xpos = UnityEngine.Random.Range(leftmost, rightmost);
+        float random_ypos = UnityEngine.Random.Range(bottommost, topmost);
         return new Vector2(random_xpos, random_ypos);
     }
 
@@ -226,26 +247,42 @@ public class Viruses : MonoBehaviour
         yield return new WaitForSeconds(time_to_upgrade);
         if (virus_can_upgrade && VirusController.instance.viruses_can_upgrade)
         {
-            GameObject test = this.gameObject;
-            upgrade_anim.SetTrigger("upgrader");
-            yield return new WaitForSeconds(.6f);//give animtion time
-            GameObject upgraded_virus = Instantiate(upgrade, transform.position, Quaternion.identity);
-            VirusController.instance.alive_viruses.AddLast(upgraded_virus); //enqueue
-            upgrading = true;
-            if (test != null)
+            if (!restart_upgrade)
             {
-                StartCoroutine(Death());
+                GameObject test = this.gameObject;
+                upgrade_anim.SetTrigger("upgrader");
+                yield return new WaitForSeconds(.6f);//give animtion time
+                GameObject upgraded_virus = Instantiate(upgrade, transform.position, Quaternion.identity);
+                VirusController.instance.alive_viruses.AddLast(upgraded_virus); //enqueue
+                upgrading = true;
+                if (test != null)
+                {
+                    StartCoroutine(Death());
+                }
+            }
+            else
+            {
+                restart_upgrade = false;
+                StartCoroutine(Upgrader());
             }
         }
     }
 
-    IEnumerator VirusExpiration() //when viruses die a natural death
+    public IEnumerator VirusExpiration() //when viruses die a natural death
     {
         yield return new WaitForSeconds(time_to_expire);
-        if (VirusController.instance.viruses_can_expire )
-        {            
-            killed = false;
-            CallDeath();
+        if (VirusController.instance.viruses_can_expire)
+        {
+            if (!restart_expire)
+            {
+                killed = false;
+                CallDeath();
+            }
+            else
+            {
+                restart_expire = false;
+                StartCoroutine(VirusExpiration());
+            }
         }
     }
    
@@ -261,4 +298,23 @@ public class Viruses : MonoBehaviour
         return Time.time >= next_spawn_time && VirusController.instance.viruses_can_spawn;
     }
 
+    public void onMaskExit_action(object sender, EventArgs e)
+    {
+        restart_expire = true;
+        if (upgradable_virus && virus_can_upgrade)
+        {
+            StartCoroutine(Upgrader());
+        }
+    }
+
+    public void onSoapExit_action(object sender, EventArgs e)
+    {
+        restart_expire = true;
+        StartCoroutine(VirusExpiration());
+        if (upgradable_virus && virus_can_upgrade)
+        {
+            restart_upgrade = true;
+            StartCoroutine(Upgrader());
+        }
+    }
 }

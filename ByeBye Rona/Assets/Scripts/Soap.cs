@@ -25,13 +25,14 @@ public class Soap : MonoBehaviour
         sanitizer = FindObjectOfType<Sanitizer>();
         bubblesRef = Resources.Load("Soap Bubbles");
         bubbles = (GameObject)(Instantiate(bubblesRef));
+        target_population= PlayerPrefs.GetFloat("SoapPercentage");
 
         CopyAliveViruses();
         QuickSort(viruses_to_kill, 0, viruses_to_kill.Count - 1);
 
         //only target 50% of the strongest viruses
         float len_viruses = (viruses_to_kill.Count + 1);
-        viruses_to_kill = viruses_to_kill.GetRange(0, (int) (len_viruses/4.0f));
+        viruses_to_kill = viruses_to_kill.GetRange(0, (int) (len_viruses/target_population));
 
         StartCoroutine(Main_Action());
     }
@@ -53,7 +54,8 @@ public class Soap : MonoBehaviour
     void Update()
     {
         Movement();
-        bubbles.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        bubbles.transform.position =
+            new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     void Swap<Viruses>(List<Viruses> arr, int pos1, int pos2)
@@ -71,7 +73,8 @@ public class Soap : MonoBehaviour
         while (pivot_pointer < end_pointer)
         {
             //sort in descending order
-            if (viruses[pivot_pointer + 1].GetComponent<Viruses>().current_health >= viruses[pivot_pointer].GetComponent<Viruses>().current_health)
+            if (viruses[pivot_pointer + 1].GetComponent<Viruses>().current_health >=
+                viruses[pivot_pointer].GetComponent<Viruses>().current_health)
             {
                 Swap(viruses, pivot_pointer, pivot_pointer + 1);
                 pivot_pointer++;
@@ -129,6 +132,7 @@ public class Soap : MonoBehaviour
         VirusController.instance.viruses_can_spawn = true;
         VirusController.instance.viruses_can_upgrade = true;
         PowerUpController.instance.power_up_currently_active = false;
+        GameEvents.instance.SoapExitAction();
         Destroy(bubbles);
         Destroy(gameObject);
     }

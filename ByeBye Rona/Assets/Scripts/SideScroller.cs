@@ -10,12 +10,6 @@ public class SideScroller : MonoBehaviour
     private float scroll_pos = 0;
     float[] pos;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         pos = new float[transform.childCount];

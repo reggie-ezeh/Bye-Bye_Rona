@@ -52,6 +52,10 @@ public class GameController : Singleton<GameController>
 
     public float seconds_to_max_difficulty;
 
+    public int killers;
+    [SerializeField]
+    TextMeshProUGUI killers_text;
+
 
     void Start()
     {
@@ -83,14 +87,14 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        killers_text.text = killers.ToString();
         if (game_over)
         {
             return;
         }
-
         CaluculateScore();
 
         current_virus_population = VirusController.instance.alive_viruses.Count;
@@ -111,7 +115,7 @@ public class GameController : Singleton<GameController>
 
     public float GetDifficultyPercent()
     {
-        return Mathf.Clamp01(Time.timeSinceLevelLoad / seconds_to_max_difficulty);
+        return Mathf.Clamp01(current_score / seconds_to_max_difficulty);
     }
 
     void CaluculateScore()
@@ -147,6 +151,7 @@ public class GameController : Singleton<GameController>
             SetHighScore();
         }
 
+        LeaderBoard.instance.SubmitScoreToLeaderboard(Mathf.RoundToInt(current_score));
         sanitizer.enable_shooter = false;
         VirusController.instance.viruses_can_expire = false;
         VirusController.instance.viruses_can_spawn = false;
@@ -157,7 +162,6 @@ public class GameController : Singleton<GameController>
 
         AdManager.ShowBanner();
         game_over_screen.SetActive(true);
-
         game_over_screen.GetComponent<GameOverMenu>().GenerateMessage();
     }
 

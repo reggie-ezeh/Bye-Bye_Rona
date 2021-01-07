@@ -773,9 +773,11 @@ MonoBehaviour:
   expire_anim: {fileID: 4369138906115885381}
   killed: 0
   upgradable_virus: 1
-  time_to_upgrade: 5
+  min_time_to_upgrade: 8
+  max_time_to_upgrade: 4
   upgrade: {fileID: 8594357509140966009, guid: e2e39f2b0baad214eb0ae4a5a2b70134, type: 3}
-  time_to_expire: 10
+  min_time_to_expire: 12
+  max_time_to_expire: 15
   is_boss: 0
   minion: {fileID: 0}
   is_minion: 0

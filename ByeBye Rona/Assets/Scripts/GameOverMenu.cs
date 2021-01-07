@@ -13,13 +13,19 @@ public class GameOverMenu : MonoBehaviour
     TextMeshProUGUI high_score_reference;
 
     [SerializeField]
+    string hint_message;
+
+    [SerializeField]
+    string new_hs_message;
+
+    [SerializeField]
     string[] random_messages;
 
     public void GenerateMessage()
     {
         if (GameController.instance.high_score_acheived)
         {
-            game_over_info.text = "CONGRATS! New HighScore: " + high_score_reference.text;
+            game_over_info.text = new_hs_message + high_score_reference.text;
         }
         else
         {
@@ -33,20 +39,19 @@ public class GameOverMenu : MonoBehaviour
             }
             else
             {
-                game_over_info.text = "Hint: Upgrading your PowerUps can help you achieve a higher score " +
-                    "You can upgrade your PowerUps from the Options Menu"; 
+                game_over_info.text = hint_message; 
             }
 
         }
     }
 
-    public void GoToMain()
+    public void GoHome()
     {
         Time.timeScale = 1;
         AdManager.HideBanner();
         SceneManager.LoadScene(0);
         int playcount = PlayerPrefs.GetInt("GamesPlayed");
-        if (playcount % 3 == 2)
+        if (playcount % 4 == 2)
         {
             AdManager.ShowStandardAd();
         }
@@ -57,7 +62,7 @@ public class GameOverMenu : MonoBehaviour
         AdManager.HideBanner();
         gameObject.SetActive(false);
         int playcount = PlayerPrefs.GetInt("GamesPlayed");
-        if (playcount % 3 == 1)
+        if (playcount % 4 == 1)
         {
             AdManager.ShowStandardAd();
         }

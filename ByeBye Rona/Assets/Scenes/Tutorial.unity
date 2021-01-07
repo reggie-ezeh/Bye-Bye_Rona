@@ -201,7 +201,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4449094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1844216582}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4449094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,7 +1163,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 182164057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 652867952}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &182164057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,13 +1726,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "If a virus is left untouched by the sanitizer after birth then the virus
-    will upgrade to a more powerful phase. (you will know when a virus has been hit
-    when a health bar appears above it)\r\n\r\nPhase one upgrades to phase two, two
-    to three, and three to the Boss phase.\r\n\r\nThe Boss phase is the final phase
-    a virus can take on so they do not upgrade.\r\nHowever, the boss will continuously
-    create smaller minions of themselves until they are eliminated. These minions
-    are non-threatening and can\u2019t upgrade, they still add to the overall population
-    of viruses.\r\n"
+    will mutate to a more powerful phase. You can prevent a virus from mutating by
+    shooting it at least once. (A health bar would appear above the virus once you
+    hit it)\r\n\r\nPhase one mutates to phase two, two to three, and three to the
+    Boss phase. Viruses will mutate faster as time progresses. \r\n\r\nThe Boss phase
+    is the final phase a virus can take on so they do not mutate.\r\nHowever, the
+    boss will continuously create smaller minions of themselves until they are eliminated.
+    These minions are non-threatening and can\u2019t mutate, but they still add to
+    the overall population of viruses.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -1785,10 +1808,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 291728946}
-    characterCount: 557
+    characterCount: 608
     spriteCount: 0
-    spaceCount: 101
-    wordCount: 99
+    spaceCount: 111
+    wordCount: 109
     linkCount: 0
     lineCount: 10
     pageCount: 1
@@ -2164,7 +2187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Virus Upgrade
+  m_text: Virus Mutation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cce34c75efbb7f14686091fd86f90c3b, type: 2}
   m_sharedMaterial: {fileID: 2270050730297045300, guid: cce34c75efbb7f14686091fd86f90c3b,
@@ -2239,7 +2262,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 361839761}
-    characterCount: 13
+    characterCount: 14
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -2800,7 +2823,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 412897678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 595611012}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &412897678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2837,6 +2871,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412897675}
+  m_CullTransparentMesh: 0
+--- !u!1 &428373404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 428373405}
+  - component: {fileID: 428373407}
+  - component: {fileID: 428373406}
+  m_Layer: 5
+  m_Name: TMP SubMeshUI [Arturo-Regular Trial SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &428373405
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428373404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653994324}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &428373406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428373404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 1.25
+  m_TextComponent: {fileID: 1653994325}
+  m_materialReferenceIndex: 1
+--- !u!222 &428373407
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428373404}
   m_CullTransparentMesh: 0
 --- !u!1 &451753618
 GameObject:
@@ -2992,7 +3098,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 473803826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1348226509}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &473803826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3043,7 +3160,7 @@ GameObject:
   - component: {fileID: 489400497}
   - component: {fileID: 489400496}
   m_Layer: 5
-  m_Name: VirusUpgrade Button
+  m_Name: VirusMutate Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3112,7 +3229,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 489400497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 652867952}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &489400497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3717,8 +3845,8 @@ MonoBehaviour:
   m_text: Your mission in the game is very simple. Keep the virus population under
     control for as long as you can by killing the viruses. The Virus Population meter
     shows how many viruses are currently alive and posing a threat to your environment.
-    Once the number of viruses exceed the population max then the game is over. The
-    longer the virus population is kept under control, the higher your score
+    If the number of viruses exceeds the population max then the game is over. The
+    longer the virus population is kept under control, the higher your score.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -3931,7 +4059,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 586471285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1019541580}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &586471285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4127,7 +4266,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602666145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 595611012}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &602666145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4399,7 +4549,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2017363886}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.21595882
+  m_Size: 0.21595883
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4453,7 +4603,7 @@ GameObject:
   - component: {fileID: 652867955}
   - component: {fileID: 652867954}
   m_Layer: 5
-  m_Name: Virus Upgrade (Panel)
+  m_Name: Virus Mutate (Panel)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4904,7 +5054,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 693775657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1810732126}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &693775657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5022,7 +5183,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 704534214}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: GoHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &704534214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5256,7 +5428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Virus Death
+  m_text: Virus Lifespan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cce34c75efbb7f14686091fd86f90c3b, type: 2}
   m_sharedMaterial: {fileID: 2270050730297045300, guid: cce34c75efbb7f14686091fd86f90c3b,
@@ -6390,10 +6562,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You will have the ability to summon 3 other members of the sanitation team
-    each game; Mighty Mask, Vicious Vaccine, and Sovereign Soap. Each Powerup can
-    only be summoned once each game so be strategic with your decisions. All powerups
-    can be upgraded from the options menu.
+  m_text: You will have the ability to summon three other members of the sanitation
+    team each game; Mighty Mask, Vicious Vaccine, and Sovereign Soap. After using
+    a PowerUp, it will be unavailable until you have killed enough viruses to regenerate
+    it, be strategic with your decisions. All powerups can be upgraded from the options
+    menu.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -6655,6 +6828,7 @@ GameObject:
   - component: {fileID: 1022168137}
   - component: {fileID: 1022168136}
   - component: {fileID: 1022168135}
+  - component: {fileID: 1022168139}
   m_Layer: 5
   m_Name: Tutorial Canvas
   m_TagString: Untagged
@@ -6753,6 +6927,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1022168139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022168134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90fc363a9932924ebbaec652ac97db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialMenu: {fileID: 958192158}
+  tutorial_panels:
+  - {fileID: 595611012}
+  - {fileID: 1810732126}
+  - {fileID: 1860796573}
+  - {fileID: 1019541580}
+  - {fileID: 652867952}
+  - {fileID: 1364386430}
+  - {fileID: 1844216582}
+  - {fileID: 1836573635}
+  - {fileID: 1348226509}
+  - {fileID: 369526710}
 --- !u!1 &1037139322
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,7 +7114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043329884}
   m_Layer: 5
-  m_Name: upgrade display(empty)
+  m_Name: mutate display(empty)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7110,8 +7308,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "You will be playing as Super Sanitizer from the sanitation team. Super
     sanitizer\u2019s main function is to shoot sanitize pallets at the viruses. Simply
-    place and drag your finger sideways on the screen to move super sanitizer and
-    make it shoot upwards at the viruses. "
+    place and drag your finger sideways across the screen to move super sanitizer
+    and make it shoot upwards at the viruses. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -7504,7 +7702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Virus' Upgrade
+  m_text: Virus' Mutation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cce34c75efbb7f14686091fd86f90c3b, type: 2}
   m_sharedMaterial: {fileID: 2270050730297045300, guid: cce34c75efbb7f14686091fd86f90c3b,
@@ -7579,7 +7777,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1124269778}
-    characterCount: 14
+    characterCount: 15
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -7910,10 +8108,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When summoned, the Mask will stop new viruses from being born, prevent
-    viruses from upgrading, and would halt the movement of viruses. All this gives
-    the sanitizer an advantage to perform better. The mask will be available for
-    a certain number of seconds based on its upgrade level. '
+  m_text: When summoned, the Mask will temporarily stop new viruses from being born,
+    prevent viruses from mutating, and halt the movement of viruses. All this gives
+    the sanitizer an advantage to be more effective. The mask will be available for
+    a certain number of seconds based on its upgrade level.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -9324,7 +9522,7 @@ GameObject:
   - component: {fileID: 1364386433}
   - component: {fileID: 1364386432}
   m_Layer: 5
-  m_Name: Virus Death (Panel)
+  m_Name: Virus Lifespan (Panel)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9699,7 +9897,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1448377558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1836573635}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1448377558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9795,8 +10004,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'The main viruses that will be born (spawned) into the game are the phases
     one, two, and three viruses. The rate at which viruses are born will increase
-    as time goes on. Phase one viruses are born most frequently, phase two less frequently
-    and phase 3 least frequently. '
+    as time progresses. Phase one viruses are born most frequently, phase two less
+    frequently, and phase 3 least frequently. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -9871,10 +10080,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1479981014}
-    characterCount: 269
+    characterCount: 273
     spriteCount: 0
-    spaceCount: 48
-    wordCount: 48
+    spaceCount: 47
+    wordCount: 47
     linkCount: 0
     lineCount: 4
     pageCount: 1
@@ -9950,10 +10159,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'When summoned, the vaccine will take the position of the sanitizer and
-    you will be able to play as the vaccine. The vaccine has the ability to kill
-    ANY virus with one shot. Shots from the vaccine are also larger than that of
-    the sanitizer, so when aimed right you could kill multiple viruses at once. The
-    mask will be available for a certain number of seconds based on its upgrade level. '
+    you will play as the vaccine. The vaccine has the ability to kill ANY virus with
+    one shot. Shots from the vaccine are also larger than that of the sanitizer,
+    so when aimed right you could kill multiple viruses at once. The vaccine will
+    be available for a certain number of seconds based on its upgrade level. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -10028,10 +10237,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1499536191}
-    characterCount: 388
+    characterCount: 380
     spriteCount: 0
-    spaceCount: 72
-    wordCount: 72
+    spaceCount: 69
+    wordCount: 69
     linkCount: 0
     lineCount: 6
     pageCount: 1
@@ -10182,12 +10391,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Due to the nature of viruses, ALL viruses (including boss and minions)
-    would die eventually based on the order in which they were born (upgrading is
-    considered being reborn) so a useful tactic might be to hit a virus at least
-    once so they can\u2019t upgrade and wait for them to die a natural death. However,
-    be aware that while a virus is alive it is still adding to the overall population
-    of viruses. Also, note that viruses die at a much slower rate compared to when
-    they are born"
+    eventually die at the end of their lifespan. Stronger viruses (phase), have longer
+    lifespans. Mutating is considered being reborn, so a virus\u2019 lifespan will
+    reset once it has mutated. Hint: A useful tactic could be to hit a virus at least
+    once so they can\u2019t upgrade and wait for them to die naturally. However,
+    be aware that while a virus is alive it adds to the overall population of viruses. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -10364,7 +10572,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1516066803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1860796573}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1516066803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10484,7 +10703,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542575496}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 369526710}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1542575496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10602,7 +10832,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1564747645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1364386430}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1564747645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15798,7 +16039,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1629053516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1348226509}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1629053516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15864,7 +16116,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 428373405}
   m_Father: {fileID: 1825472142}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15892,7 +16145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Virus' Death
+  m_text: Virus' Lifespan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cce34c75efbb7f14686091fd86f90c3b, type: 2}
   m_sharedMaterial: {fileID: 2270050730297045300, guid: cce34c75efbb7f14686091fd86f90c3b,
@@ -15967,7 +16220,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1653994325}
-    characterCount: 12
+    characterCount: 15
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -16172,7 +16425,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1749775108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1019541580}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1749775108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16546,7 +16810,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1771005807}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1860796573}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1771005807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16902,7 +17177,7 @@ GameObject:
   - component: {fileID: 1825472144}
   - component: {fileID: 1825472143}
   m_Layer: 5
-  m_Name: VirusDeath Button
+  m_Name: VirusLifespan Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16971,7 +17246,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1825472144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1364386430}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1825472144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17167,7 +17453,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1838516460}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 369526710}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1838516460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17441,7 +17738,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1869844337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1836573635}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1869844337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18268,7 +18576,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2023990147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: OpenTutorial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1844216582}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2023990147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18484,7 +18803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034773095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2314453, y: -67.10949, z: -3325.1228}
+  m_LocalPosition: {x: 4.3, y: -78.8, z: -3325.1228}
   m_LocalScale: {x: 24, y: 24, z: 36.9458}
   m_Children: []
   m_Father: {fileID: 690156842}
@@ -18944,7 +19263,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2072031928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1022168139}
+        m_MethodName: TutorialMain
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1810732126}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2072031928
 MonoBehaviour:
   m_ObjectHideFlags: 0
