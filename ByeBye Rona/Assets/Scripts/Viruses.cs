@@ -253,7 +253,7 @@ public class Viruses : MonoBehaviour
                 upgrade_anim.SetTrigger("upgrader");
                 yield return new WaitForSeconds(.6f);//give animtion time
                 GameObject upgraded_virus = Instantiate(upgrade, transform.position, Quaternion.identity);
-                VirusController.instance.alive_viruses.AddLast(upgraded_virus); //enqueue
+                VirusController.instance.alive_viruses.AddLast(upgraded_virus); 
                 upgrading = true;
                 if (test != null)
                 {
