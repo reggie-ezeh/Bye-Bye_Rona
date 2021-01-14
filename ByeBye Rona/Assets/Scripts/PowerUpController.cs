@@ -34,6 +34,15 @@ public class PowerUpController : Singleton<PowerUpController>
 
     void Start()
     {
+        //////Tester//////
+        mask_reward_treshold = PlayerPrefs.GetInt("test_mask_recharge_treshold");
+        vaccine_reward_treshold = PlayerPrefs.GetInt("test_vaccine_recharge_treshold");
+        soap_reward_treshold = PlayerPrefs.GetInt("test_soap_recharge_treshold");
+        
+
+
+
+
         power_up_currently_active = false;
         vaccine_button.interactable = true;
         soap_button.interactable = true;
@@ -46,6 +55,7 @@ public class PowerUpController : Singleton<PowerUpController>
         {
             soap_counter = 0;
             power_up_currently_active = true;
+            AudioManager.instance.Play("PowerUp");
             Instantiate(soap);
             soap_button.interactable = false;
         }
@@ -57,6 +67,7 @@ public class PowerUpController : Singleton<PowerUpController>
         {
             mask_counter = 0;
             power_up_currently_active = true;
+            AudioManager.instance.Play("PowerUp");
             Instantiate(mask);
             mask_button.interactable = false;
         }
@@ -68,6 +79,7 @@ public class PowerUpController : Singleton<PowerUpController>
         {
             vaccine_counter = 0;
             power_up_currently_active = true;
+            AudioManager.instance.Play("PowerUp");
             vaccine_button.interactable = false;
             StartCoroutine(Sanitizer.instance.SummonVaccine());
         }

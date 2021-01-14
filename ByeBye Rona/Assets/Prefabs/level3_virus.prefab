@@ -113,8 +113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1714254511}
-  low: {r: 1, g: 0.15492909, b: 0.066037714, a: 0}
-  high: {r: 0.24231303, g: 1, b: 0, a: 0}
   offset: {x: 0, y: 0.8, z: 0}
 --- !u!1 &394964815
 GameObject:
@@ -5536,3 +5534,4 @@ MonoBehaviour:
   minion: {fileID: 0}
   is_minion: 0
   minion_spawn_rate: 0
+  tester_phase: 3

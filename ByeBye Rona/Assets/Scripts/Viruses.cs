@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-//This will be the base class for the viruses
+
 public class Viruses : MonoBehaviour
 {
-    //used to check if the virus has been hit
     public int original_health;
     public int current_health;
 
     Vector2 target;
 
-    float min_speed;
-    float max_speed;
     float virus_speed;
 
     private SpriteRenderer spriteRenderer;
@@ -80,14 +77,39 @@ public class Viruses : MonoBehaviour
     float minion_spawn_rate;
 
 
+
+    
+    ///// Tester//////
+    public int tester_phase;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
+        ///////Tester///////
+        minion_spawn_rate = PlayerPrefs.GetFloat("test_minion_spawn_rate");
+
+
+
+
+
+
+
+
         // Begin each game by giving each virus a position to move to
         target = GetRandomTarget();
         killed = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         upgrading = false;
+
+        ////////Tester////////
+        TesterVirus(tester_phase);
+        
+
+
+
+
 
         time_to_upgrade = Mathf.Lerp(min_time_to_upgrade, max_time_to_upgrade, GameController.instance.GetDifficultyPercent());
         time_to_expire = Mathf.Lerp(min_time_to_expire, max_time_to_expire, GameController.instance.GetDifficultyPercent());
@@ -122,7 +144,7 @@ public class Viruses : MonoBehaviour
 
     void Update()
     {
-        if (!is_boss && virus_can_move)
+        if (virus_can_move)
         {
             Movement();
         }
@@ -133,6 +155,58 @@ public class Viruses : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Testter
+    /// </summary>
+    void TesterVirus( int phase)
+    {
+        if (phase == 1)
+        {
+            min_time_to_upgrade = PlayerPrefs.GetFloat("test_phase1_min_mutate");
+            max_time_to_upgrade = PlayerPrefs.GetFloat("test_phase1_max_mutate");
+            min_time_to_expire = PlayerPrefs.GetFloat("test_phase1_min_expire");
+            max_time_to_expire = PlayerPrefs.GetFloat("test_phase1_max_expire");
+        }
+
+        if (phase == 2)
+        {
+            min_time_to_upgrade = PlayerPrefs.GetFloat("test_phase2_min_mutate");
+            max_time_to_upgrade = PlayerPrefs.GetFloat("test_phase2_max_mutate");
+            min_time_to_expire = PlayerPrefs.GetFloat("test_phase2_min_expire");
+            max_time_to_expire = PlayerPrefs.GetFloat("test_phase2_max_expire");
+        }
+
+        if (phase == 3)
+        {
+            min_time_to_upgrade = PlayerPrefs.GetFloat("test_phase3_min_mutate");
+            max_time_to_upgrade = PlayerPrefs.GetFloat("test_phase3_max_mutate");
+            min_time_to_expire = PlayerPrefs.GetFloat("test_phase3_min_expire");
+            max_time_to_expire = PlayerPrefs.GetFloat("test_phase3_max_expire");
+        }
+
+        if (phase == 4)
+        {
+
+            min_time_to_expire = PlayerPrefs.GetFloat("test_phase4_min_expire");
+            max_time_to_expire = PlayerPrefs.GetFloat("test_phase4_max_expire");
+        }
+
+        if (phase == 5)
+        {
+
+            min_time_to_expire = PlayerPrefs.GetFloat("test_phase5_min_expire");
+            max_time_to_expire = PlayerPrefs.GetFloat("test_phase5_max_expire");
+        }
+
+
+    }
+
+
+
+
+
+
+
 
     void OnTriggerEnter2D(Collider2D items)
     {
@@ -140,7 +214,6 @@ public class Viruses : MonoBehaviour
         if (items.gameObject.CompareTag("bullet"))
         {
             current_health--;
-            //SoundManager.instance.play_Requested_Audio(SoundManager.instance.virus_hit);
             spriteRenderer.material = mat_flash; //to display hit animation
             virus_can_upgrade = false;  //once the sanitizer has hit the virus, it can never upgrade
 
@@ -151,6 +224,7 @@ public class Viruses : MonoBehaviour
             else
             {
                 Invoke("ResetMaterial", .1f);
+                AudioManager.instance.Play("VirusHit");
                 if (!is_minion) {
                     healthBar.SetHealth(current_health, original_health);
                 }
@@ -187,6 +261,7 @@ public class Viruses : MonoBehaviour
                 GameController.instance.killers += 1;
                 GameObject explosion = (GameObject)(Instantiate(explosionRef));
                 explosion.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                AudioManager.instance.Play("VirusDeath");
             }
             else //virus expiring
             {
@@ -214,7 +289,8 @@ public class Viruses : MonoBehaviour
             }
             else
             {
-                virus_speed = 10;
+                //////Tester//////
+                virus_speed = PlayerPrefs.GetFloat("test_boss_speed"); ;
             }
 
             //if the virus has not reach its desired position move there, otherwise calculate a new position
@@ -290,7 +366,7 @@ public class Viruses : MonoBehaviour
     {
         next_spawn_time = Time.time + minion_spawn_rate;
         GameObject spawned_minion = Instantiate(minion, transform.position, Quaternion.identity);
-        VirusController.instance.alive_viruses.AddLast(spawned_minion); //enqueue
+        VirusController.instance.alive_viruses.AddLast(spawned_minion);
     }
 
     private bool ShouldSpawnMinion()

@@ -22,7 +22,7 @@ public class LeaderBoard : MonoBehaviour
 
 
     // Update is called once per frame
-    public void SubmitScoreToLeaderboard(int score)
+    public void SubmitScoreToLeaderboard(long score)
     {
         Leaderboards.HighScoreBoard.SubmitScore(score);
     }

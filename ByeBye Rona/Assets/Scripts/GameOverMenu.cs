@@ -26,6 +26,7 @@ public class GameOverMenu : MonoBehaviour
         if (GameController.instance.high_score_acheived)
         {
             game_over_info.text = new_hs_message + high_score_reference.text;
+            StartCoroutine(Yay());
         }
         else
         {
@@ -41,7 +42,6 @@ public class GameOverMenu : MonoBehaviour
             {
                 game_over_info.text = hint_message; 
             }
-
         }
     }
 
@@ -67,6 +67,12 @@ public class GameOverMenu : MonoBehaviour
             AdManager.ShowStandardAd();
         }
         SceneManager.LoadScene(1);
+    }
+
+    IEnumerator Yay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.Play("HighScore");
     }
 }
 

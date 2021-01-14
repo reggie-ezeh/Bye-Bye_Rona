@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     int visited;
+    public GameObject testpanel;
+
     void Start()
     {
         visited = PlayerPrefs.GetInt("OpenedMenu") + 1;
         PlayerPrefs.SetInt("OpenedMenu", visited);
+        AdManager.HideBanner();
+
+
+
+        testpanel.SetActive(false);
+
     }
 
     public void Startgame()
@@ -41,6 +49,12 @@ public class MainMenu : MonoBehaviour
 
     public void OpenLeaderboard()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
+
+    public void OpenTester()
+    {
+        testpanel.SetActive(true);
+    }
+
 }

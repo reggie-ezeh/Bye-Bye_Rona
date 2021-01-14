@@ -8,13 +8,13 @@ public class AudioManager : MonoBehaviour
 
 	public AudioMixerGroup mixerGroup;
 
-	public Sound[] sounds;
-
 	[SerializeField]
 	AudioMixer MainaudioMixer;
 
 	public float music_preset;
 	public float sfx_preset;
+
+	public Sound[] sounds;
 
 	void Awake()
 	{

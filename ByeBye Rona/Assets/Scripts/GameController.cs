@@ -49,8 +49,9 @@ public class GameController : Singleton<GameController>
 
     [SerializeField]
     GameObject paused_screen;
-
-    public float seconds_to_max_difficulty;
+    
+    [SerializeField]
+    float seconds_to_max_difficulty;
 
     public int killers;
     [SerializeField]
@@ -85,6 +86,10 @@ public class GameController : Singleton<GameController>
         {
             high_score_text.text = "0:00";
         }
+
+
+        ////////////////Tester///////////
+        seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
     }
 
 
@@ -98,7 +103,7 @@ public class GameController : Singleton<GameController>
         CaluculateScore();
 
         current_virus_population = VirusController.instance.alive_viruses.Count;
-        population_bar.fillAmount =  ( (float) current_virus_population/ virus_population_max);
+        population_bar.fillAmount =  ((float) current_virus_population/ virus_population_max);
         population_text.text = current_virus_population.ToString() + "/" + virus_population_max.ToString();
 
         if ( current_virus_population> virus_population_max)
@@ -141,17 +146,27 @@ public class GameController : Singleton<GameController>
         }
     }
 
+    int GetLeaderBoardScore()
+    {
+        #if UNITY_ANRDOID
+             return Mathf.RoundToInt(current_score * 1000);
+        #elif UNITY_IOS
+            return Mathf.RoundToInt(current_score * 100);
+        #endif
+    }
     public void EndGame()
     {
         game_over = true;
         timer_text.color = Color.red;
+        AudioManager.instance.Play("GameOver");
 
         if (current_score > PlayerPrefs.GetFloat("HighScore") )
         {
             SetHighScore();
         }
 
-        LeaderBoard.instance.SubmitScoreToLeaderboard(Mathf.RoundToInt(current_score));
+        int lb_score = GetLeaderBoardScore();
+        LeaderBoard.instance.SubmitScoreToLeaderboard(lb_score);
         sanitizer.enable_shooter = false;
         VirusController.instance.viruses_can_expire = false;
         VirusController.instance.viruses_can_spawn = false;

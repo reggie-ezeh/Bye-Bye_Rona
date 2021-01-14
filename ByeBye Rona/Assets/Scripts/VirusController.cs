@@ -63,6 +63,15 @@ public class VirusController : Singleton<VirusController>
 
     void Start()
     {
+        /////Tester/////
+        min_virus_speed = PlayerPrefs.GetFloat("test_min_virus_speed");
+        max_virus_speed = PlayerPrefs.GetFloat("test_max_virus_speed");
+        min_spawn_rate = PlayerPrefs.GetFloat("test_min_spawn_rate");
+        max_spawn_rate = PlayerPrefs.GetFloat("test_max_spawn_rate");
+
+
+
+
         viruses_can_spawn = true;
         viruses_can_move = true;
         viruses_can_upgrade = true;

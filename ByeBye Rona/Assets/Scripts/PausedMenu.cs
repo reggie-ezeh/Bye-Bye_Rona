@@ -12,12 +12,14 @@ public class PausedMenu : MonoBehaviour
         GameController.instance.is_paused = false;
         gameObject.SetActive(false);
         AdManager.HideBanner();
+        AdManager.HideBanner();
     }
 
     public void Restart()
     {
         AdManager.HideBanner();
         SceneManager.LoadScene(1);
+        AdManager.HideBanner();
     }
 
     public void Quit()
@@ -25,6 +27,7 @@ public class PausedMenu : MonoBehaviour
         AdManager.HideBanner();
         Time.timeScale = 1;
         SceneManager.LoadScene(0, LoadSceneMode.Single);
+        AdManager.HideBanner();
     }
 
 }

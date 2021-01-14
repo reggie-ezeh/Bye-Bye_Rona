@@ -9,8 +9,17 @@ public class Mask : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Main_Action());
         masktime = PlayerPrefs.GetFloat("MaskTime");
+
+
+
+        //////Tester///////
+        masktime = PlayerPrefs.GetFloat("test_mask_max_time");
+
+
+
+
+        StartCoroutine(Main_Action());
     }
 
     IEnumerator Main_Action()
@@ -20,7 +29,6 @@ public class Mask : MonoBehaviour
         VirusController.instance.viruses_can_move = false;
         VirusController.instance.viruses_can_spawn = false;
         VirusController.instance.viruses_can_upgrade = false;
-           
 
         yield return new WaitForSeconds(masktime);
 

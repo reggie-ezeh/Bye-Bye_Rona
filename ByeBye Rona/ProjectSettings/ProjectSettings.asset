@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -41,7 +41,7 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: 9803b4104c98d13418ec6344fff6ab26, type: 3}
-    duration: 2.5
+    duration: 2.8
   - logo: {fileID: 21300000, guid: 638b3be4a5839254b808826b3969901e, type: 3}
     duration: 3.5
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -407,36 +407,6 @@ PlayerSettings:
       m_SubKind: App Store
     - m_Textures:
       - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
-      m_Width: 180
-      m_Height: 180
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures:
-      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures:
-      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
-      m_Width: 167
-      m_Height: 167
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures:
-      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
-      m_Width: 152
-      m_Height: 152
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures:
-      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
-      m_Width: 76
-      m_Height: 76
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures:
-      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
       m_Width: 120
       m_Height: 120
       m_Kind: 3
@@ -488,6 +458,36 @@ PlayerSettings:
       m_Width: 29
       m_Height: 29
       m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
+      m_Width: 180
+      m_Height: 180
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
+      m_Width: 167
+      m_Height: 167
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
+      m_Width: 152
+      m_Height: 152
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 4616aff8935a80e4eaac24d2d1812932, type: 3}
+      m_Width: 76
+      m_Height: 76
+      m_Kind: 0
       m_SubKind: iPad
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsJobs:
@@ -933,13 +933,13 @@ PlayerSettings:
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
     Analytics: 0
-    Build: 1
+    Build: 0
     Collab: 0
     ErrorHub: 0
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 1
+    UNet: 0
     Unity_Ads: 0
   luminIcon:
     m_Name: 

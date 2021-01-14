@@ -26,6 +26,11 @@ public class Soap : MonoBehaviour
         bubbles = (GameObject)(Instantiate(bubblesRef));
         target_population= PlayerPrefs.GetFloat("SoapPercentage");
 
+        //////Tester///////
+        target_population = (1.3f);
+
+
+
         CopyAliveViruses();
         QuickSort(viruses_to_kill, 0, viruses_to_kill.Count - 1);
 
