@@ -90,6 +90,7 @@ public class GameController : Singleton<GameController>
 
         ////////////////Tester///////////
         seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
+        virus_population_max = PlayerPrefs.GetInt("test_population_max");
     }
 
 
