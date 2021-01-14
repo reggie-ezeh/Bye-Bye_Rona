@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
         AdManager.HideBanner();
 
 
-
+        //////Tester//////
         testpanel.SetActive(false);
 
     }
@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenLeaderboard()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     public void OpenTester()

@@ -3001,7 +3001,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"http://www.instagram.com/willswift/"'
+          m_StringArgument: '"https://www.instagram.com/willswift/"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &484691231
@@ -3023,7 +3023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' http://www.instagram.com/willswift/'
+  m_text: ' https://www.instagram.com/willswift/'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3382,7 +3382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: driftwoodgaming.itch.io
+  m_text: https://driftwoodgaming.itch.io
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6391,7 +6391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 701.04645, y: -438.4424}
+  m_AnchoredPosition: {x: 701.04645, y: -438.44238}
   m_SizeDelta: {x: 1402.0929, y: 238.96161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865977414
@@ -7522,7 +7522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 701.04645, y: -149.4808}
+  m_AnchoredPosition: {x: 701.04645, y: -149.48071}
   m_SizeDelta: {x: 1402.0929, y: 238.96161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006686153
@@ -9022,8 +9022,8 @@ RectTransform:
   m_Father: {fileID: 956296392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7044691}
-  m_AnchorMax: {x: 1, y: 0.9999846}
+  m_AnchorMin: {x: 0, y: 0.7044689}
+  m_AnchorMax: {x: 1, y: 0.99998444}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9529,7 +9529,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"www.facebook.com/polis.oscar"'
+          m_StringArgument: '"https://www.facebook.com/polis.oscar"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1313037558
@@ -9737,7 +9737,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"http://coronavirus.jhu.edu/map.html"'
+          m_StringArgument: '"https://coronavirus.jhu.edu/map.html"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1354409346
@@ -10189,8 +10189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.5999756, y: -103.899994}
-  m_SizeDelta: {x: 43.821404, y: 207.72723}
+  m_AnchoredPosition: {x: 1.5999756, y: -0.018249512}
+  m_SizeDelta: {x: 43.821404, y: -0.036315918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413242265
 MonoBehaviour:
@@ -10234,7 +10234,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1211311464}
   m_HandleRect: {fileID: 1211311463}
   m_Direction: 2
-  m_Value: 0.99997765
+  m_Value: 0.99997795
   m_Size: 0.29551554
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10825,7 +10825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sbadany.artstation.com
+  m_text: https://sbadany.artstation.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11598,7 +11598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: www.freepik.com
+  m_text: https://www.freepik.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11783,7 +11783,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"www.flaticon.com"'
+          m_StringArgument: '"https://www.flaticon.com"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1611431418
@@ -11805,7 +11805,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: www.flaticon.com
+  m_text: https://www.flaticon.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

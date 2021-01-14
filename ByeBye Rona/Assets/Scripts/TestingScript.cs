@@ -128,6 +128,10 @@ public class TestingScript : MonoBehaviour
     public GameObject phase5_max_expire_field;
     public GameObject phase5_max_expire_display;
 
+    public string population_max;
+    public GameObject population_max_field;
+    public GameObject population_max_display;
+
     void Start()
     {
         secs_to_max_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetFloat("test_secs_to_max").ToString();
@@ -168,6 +172,8 @@ public class TestingScript : MonoBehaviour
 
         phase5_min_expire_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetFloat("test_phase5_min_expire").ToString();
         phase5_max_expire_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetFloat("test_phase5_max_expire").ToString();
+
+        population_max_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("test_population_max").ToString();
     }
 
     public void Goback()
@@ -697,6 +703,23 @@ public class TestingScript : MonoBehaviour
         {
             error_msg.text = "";
             PlayerPrefs.SetFloat("test_phase5_max_expire", flt_ver);
+            StartCoroutine(MessageDisplay(true));
+        }
+        else
+        {
+            StartCoroutine(MessageDisplay(false));
+        }
+    }
+
+    public void PopulationMax()
+    {
+        population_max = population_max_field.GetComponent<TextMeshProUGUI>().text;
+        population_max = population_max.Substring(0, population_max.Length - 1);
+
+        if (int.TryParse(phase5_max_expire, out int flt_ver))
+        {
+            error_msg.text = "";
+            PlayerPrefs.SetInt("test_population_max", flt_ver);
             StartCoroutine(MessageDisplay(true));
         }
         else
