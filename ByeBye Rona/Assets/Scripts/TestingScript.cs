@@ -716,7 +716,7 @@ public class TestingScript : MonoBehaviour
         population_max = population_max_field.GetComponent<TextMeshProUGUI>().text;
         population_max = population_max.Substring(0, population_max.Length - 1);
 
-        if (int.TryParse(phase5_max_expire, out int flt_ver))
+        if (int.TryParse(population_max, out int flt_ver))
         {
             error_msg.text = "";
             PlayerPrefs.SetInt("test_population_max", flt_ver);
