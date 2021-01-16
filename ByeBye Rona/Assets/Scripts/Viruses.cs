@@ -76,41 +76,24 @@ public class Viruses : MonoBehaviour
     [SerializeField]
     float minion_spawn_rate;
 
-
-
-    
     ///// Tester//////
-    public int tester_phase;
+    //public int tester_phase;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         ///////Tester///////
-        minion_spawn_rate = PlayerPrefs.GetFloat("test_minion_spawn_rate");
+        //minion_spawn_rate = PlayerPrefs.GetFloat("test_minion_spawn_rate");
 
-
-
-
-
-
-
-
-        // Begin each game by giving each virus a position to move to
         target = GetRandomTarget();
         killed = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         upgrading = false;
 
         ////////Tester////////
-        TesterVirus(tester_phase);
+        //TesterVirus(tester_phase);
         
-
-
-
-
-
         time_to_upgrade = Mathf.Lerp(min_time_to_upgrade, max_time_to_upgrade, GameController.instance.GetDifficultyPercent());
         time_to_expire = Mathf.Lerp(min_time_to_expire, max_time_to_expire, GameController.instance.GetDifficultyPercent());
 
@@ -155,9 +138,7 @@ public class Viruses : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Testter
-    /// </summary>
     void TesterVirus( int phase)
     {
         if (phase == 1)
@@ -258,7 +239,6 @@ public class Viruses : MonoBehaviour
             {
                 PowerUpController.instance.AddKills();
                 PowerUpController.instance.CheckReward();
-                GameController.instance.killers += 1;
                 GameObject explosion = (GameObject)(Instantiate(explosionRef));
                 explosion.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 AudioManager.instance.Play("VirusDeath");
@@ -290,7 +270,8 @@ public class Viruses : MonoBehaviour
             else
             {
                 //////Tester//////
-                virus_speed = PlayerPrefs.GetFloat("test_boss_speed"); ;
+                //virus_speed = PlayerPrefs.GetFloat("test_boss_speed"); 
+                virus_speed= VirusController.instance.boss_speed;
             }
 
             //if the virus has not reach its desired position move there, otherwise calculate a new position

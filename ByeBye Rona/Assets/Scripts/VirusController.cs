@@ -41,6 +41,8 @@ public class VirusController : Singleton<VirusController>
 
     public float min_virus_speed;
     public float max_virus_speed;
+    public float boss_speed;
+
 
     //wait this amount of time before the very first spawn
     int start_wait = 2;
@@ -64,13 +66,10 @@ public class VirusController : Singleton<VirusController>
     void Start()
     {
         /////Tester/////
-        min_virus_speed = PlayerPrefs.GetFloat("test_min_virus_speed");
-        max_virus_speed = PlayerPrefs.GetFloat("test_max_virus_speed");
-        min_spawn_rate = PlayerPrefs.GetFloat("test_min_spawn_rate");
-        max_spawn_rate = PlayerPrefs.GetFloat("test_max_spawn_rate");
-
-
-
+        //min_virus_speed = PlayerPrefs.GetFloat("test_min_virus_speed");
+        //max_virus_speed = PlayerPrefs.GetFloat("test_max_virus_speed");
+        //min_spawn_rate = PlayerPrefs.GetFloat("test_min_spawn_rate");
+        //max_spawn_rate = PlayerPrefs.GetFloat("test_max_spawn_rate");
 
         viruses_can_spawn = true;
         viruses_can_move = true;

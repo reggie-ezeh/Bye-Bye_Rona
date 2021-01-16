@@ -11,13 +11,8 @@ public class Mask : MonoBehaviour
     {
         masktime = PlayerPrefs.GetFloat("MaskTime");
 
-
-
         //////Tester///////
-        masktime = PlayerPrefs.GetFloat("test_mask_max_time");
-
-
-
+        //masktime = PlayerPrefs.GetFloat("test_mask_max_time");
 
         StartCoroutine(Main_Action());
     }

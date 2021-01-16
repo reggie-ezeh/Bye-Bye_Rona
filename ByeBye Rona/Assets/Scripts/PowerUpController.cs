@@ -35,14 +35,10 @@ public class PowerUpController : Singleton<PowerUpController>
     void Start()
     {
         //////Tester//////
-        mask_reward_treshold = PlayerPrefs.GetInt("test_mask_recharge_treshold");
-        vaccine_reward_treshold = PlayerPrefs.GetInt("test_vaccine_recharge_treshold");
-        soap_reward_treshold = PlayerPrefs.GetInt("test_soap_recharge_treshold");
+        //mask_reward_treshold = PlayerPrefs.GetInt("test_mask_recharge_treshold");
+        //vaccine_reward_treshold = PlayerPrefs.GetInt("test_vaccine_recharge_treshold");
+        //soap_reward_treshold = PlayerPrefs.GetInt("test_soap_recharge_treshold");
         
-
-
-
-
         power_up_currently_active = false;
         vaccine_button.interactable = true;
         soap_button.interactable = true;

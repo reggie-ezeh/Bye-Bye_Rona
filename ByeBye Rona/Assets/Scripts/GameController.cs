@@ -53,11 +53,6 @@ public class GameController : Singleton<GameController>
     [SerializeField]
     float seconds_to_max_difficulty;
 
-    public int killers;
-    [SerializeField]
-    TextMeshProUGUI killers_text;
-
-
     void Start()
     {
         playing = true;
@@ -87,16 +82,14 @@ public class GameController : Singleton<GameController>
             high_score_text.text = "0:00";
         }
 
-
         ////////////////Tester///////////
-        seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
-        virus_population_max = PlayerPrefs.GetInt("test_population_max");
+        //seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
+        //virus_population_max = PlayerPrefs.GetInt("test_population_max");
     }
 
 
     void Update()
     {
-        killers_text.text = killers.ToString();
         if (game_over)
         {
             return;
@@ -133,6 +126,7 @@ public class GameController : Singleton<GameController>
             int seconds = Mathf.FloorToInt(current_score % 60f);
             int milliseconds = Mathf.FloorToInt((current_score * 100f) % 100f);
             timer_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
+            AdManager.HideBanner();
         }
     }
 
@@ -149,8 +143,8 @@ public class GameController : Singleton<GameController>
 
     int GetLeaderBoardScore()
     {
-        #if UNITY_ANRDOID
-             return Mathf.RoundToInt(current_score * 1000);
+        #if UNITY_ANDROID
+            return Mathf.RoundToInt(current_score * 1000);
         #elif UNITY_IOS
             return Mathf.RoundToInt(current_score * 100);
         #endif

@@ -12,12 +12,14 @@ public class MainMenu : MonoBehaviour
     {
         visited = PlayerPrefs.GetInt("OpenedMenu") + 1;
         PlayerPrefs.SetInt("OpenedMenu", visited);
-        AdManager.HideBanner();
-
 
         //////Tester//////
-        testpanel.SetActive(false);
+        //testpanel.SetActive(false);
+    }
 
+    void Update()
+    {
+        AdManager.HideBanner();
     }
 
     public void Startgame()
