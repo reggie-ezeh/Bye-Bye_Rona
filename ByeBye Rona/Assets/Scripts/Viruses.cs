@@ -286,7 +286,6 @@ public class Viruses : MonoBehaviour
         }
     }
 
-    //Method to calculate a random position for the virus
     Vector2 GetRandomTarget()
     {
         float leftmost = VirusController.instance.left_edge + (.5f * size.x);
