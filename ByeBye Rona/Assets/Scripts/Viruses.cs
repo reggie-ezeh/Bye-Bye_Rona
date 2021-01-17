@@ -184,11 +184,6 @@ public class Viruses : MonoBehaviour
 
 
 
-
-
-
-
-
     void OnTriggerEnter2D(Collider2D items)
     {
         // when the pallet hits the wall, destroy it.
