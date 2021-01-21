@@ -186,7 +186,7 @@ public class TestingScript : MonoBehaviour
         if (success)
         {
             error_msg.color = Color.green;
-            error_msg.text = "Submitted! btw Randolph got a little meat";
+            error_msg.text = "Submitted!";
             yield return new WaitForSeconds(1.8f);
             error_msg.text = "";
         }
@@ -641,7 +641,6 @@ public class TestingScript : MonoBehaviour
         }
     }
 
-
     public void Phase4MinExpire()
     {
         phase4_min_expire = phase4_min_expire_field.GetComponent<TextMeshProUGUI>().text;
@@ -675,7 +674,6 @@ public class TestingScript : MonoBehaviour
             StartCoroutine(MessageDisplay(false));
         }
     }
-
 
     public void Phase5MinExpire()
     {

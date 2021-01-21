@@ -174,11 +174,9 @@ public class Viruses : MonoBehaviour
 
         if (phase == 5)
         {
-
             min_time_to_expire = PlayerPrefs.GetFloat("test_phase5_min_expire");
             max_time_to_expire = PlayerPrefs.GetFloat("test_phase5_max_expire");
         }
-
 
     }
 

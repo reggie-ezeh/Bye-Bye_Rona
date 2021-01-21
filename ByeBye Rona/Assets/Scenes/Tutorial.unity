@@ -3842,11 +3842,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your mission in the game is very simple. Keep the virus population under
-    control for as long as you can by killing the viruses. The Virus Population meter
-    shows how many viruses are currently alive and posing a threat to your environment.
-    If the number of viruses exceeds the population max then the game is over. The
-    longer the virus population is kept under control, the higher your score.
+  m_text: Your mission in the game is straightforward. Keep the virus population
+    under control for as long as you can by killing the viruses. The Virus Population
+    meter shows how many viruses are currently alive and posing a threat to your
+    environment. If the number of viruses exceeds the population max then the game
+    is over. The longer you keep the virus population under control, the higher your
+    score.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -4549,7 +4550,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2017363886}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.21595882
+  m_Size: 0.21595883
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -74,8 +74,8 @@ public class GameController : Singleton<GameController>
             high_score = PlayerPrefs.GetFloat("HighScore");
             int minutes = Mathf.FloorToInt(high_score / 60f);
             int seconds = Mathf.FloorToInt(high_score % 60f);
-            int milliseconds = Mathf.FloorToInt((high_score * 100f) % 100f);
-            high_score_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
+            int milliseconds = Mathf.FloorToInt(((high_score * 100f) % 100f) / 10);
+            high_score_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("0");
         }
         else
         {
@@ -124,8 +124,8 @@ public class GameController : Singleton<GameController>
             current_score += Time.deltaTime;
             int minutes = Mathf.FloorToInt(current_score / 60f);
             int seconds = Mathf.FloorToInt(current_score % 60f);
-            int milliseconds = Mathf.FloorToInt((current_score * 100f) % 100f);
-            timer_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
+            int milliseconds = Mathf.FloorToInt(((current_score * 100f) % 100f)/10);
+            timer_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("0");
             AdManager.HideBanner();
         }
     }

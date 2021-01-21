@@ -32,7 +32,6 @@ public class Soap : MonoBehaviour
         CopyAliveViruses();
         QuickSort(viruses_to_kill, 0, viruses_to_kill.Count - 1);
 
-        //only target 50% of the strongest viruses
         float len_viruses = (viruses_to_kill.Count + 1);
         viruses_to_kill = viruses_to_kill.GetRange(0, (int) (len_viruses/target_population));
 
@@ -139,7 +138,6 @@ public class Soap : MonoBehaviour
         Destroy(gameObject);
     }
 
-
     void Movement()
     {
         if ((Vector2)transform.position != target)
@@ -151,6 +149,4 @@ public class Soap : MonoBehaviour
             attack_now = true;
         }
     }
-
-
 }
