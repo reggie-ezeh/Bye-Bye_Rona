@@ -42,7 +42,6 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    //call for skippable Ad
     public static void ShowStandardAd()
     {
         if (Advertisement.IsReady(videoID))
