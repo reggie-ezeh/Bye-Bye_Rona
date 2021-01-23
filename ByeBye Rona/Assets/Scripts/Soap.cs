@@ -11,7 +11,7 @@ public class Soap : MonoBehaviour
     private List<GameObject> viruses_to_kill = new List<GameObject>();
 
     readonly float wait_to_start_kills = 3;
-    readonly float soap_speed = 14;
+    readonly float soap_speed = 15;
     Vector2 target;
     bool attack_now = false;
     private Object bubblesRef;
