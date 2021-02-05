@@ -49,11 +49,6 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void OpenLeaderboard()
-    {
-        //PlayerPrefs.DeleteAll();
-    }
-
     public void OpenTester()
     {
         testpanel.SetActive(true);

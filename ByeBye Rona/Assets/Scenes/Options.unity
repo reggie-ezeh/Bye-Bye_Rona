@@ -6990,7 +6990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -44.221985}
+  m_AnchoredPosition: {x: 0, y: -44.221924}
   m_SizeDelta: {x: 0, y: -88.44327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420360641
@@ -8749,9 +8749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask_max: 10
-  mask_upgrade_rate: 0.5
+  mask_upgrade_rate: 1
   vaccine_max: 10
-  vaccine_upgrade_rate: 0.5
+  vaccine_upgrade_rate: 1
   soap_max: 1.3
   soap_upgrade_rate: 0.3
   mask_status_text: {fileID: 1556130944}

@@ -35,9 +35,9 @@ public class PowerUpController : Singleton<PowerUpController>
     void Start()
     {
         //////Tester//////
-        //mask_reward_treshold = PlayerPrefs.GetInt("test_mask_recharge_treshold");
-        //vaccine_reward_treshold = PlayerPrefs.GetInt("test_vaccine_recharge_treshold");
-        //soap_reward_treshold = PlayerPrefs.GetInt("test_soap_recharge_treshold");
+        mask_reward_treshold = PlayerPrefs.GetInt("test_mask_recharge_treshold");
+        vaccine_reward_treshold = PlayerPrefs.GetInt("test_vaccine_recharge_treshold");
+        soap_reward_treshold = PlayerPrefs.GetInt("test_soap_recharge_treshold");
         
         power_up_currently_active = false;
         vaccine_button.interactable = true;
@@ -87,18 +87,22 @@ public class PowerUpController : Singleton<PowerUpController>
         {
             mask_counter = 0;
             RewardMask();
+            //make it harder to get the mask next time
+            mask_reward_treshold += PlayerPrefs.GetInt("test_population_max");
         }
 
         if (vaccine_counter >= vaccine_reward_treshold)
         {
             vaccine_counter = 0;
             RewardVaccine();
+            vaccine_reward_treshold += PlayerPrefs.GetInt("test_population_max");
         }
 
         if (soap_counter >=  soap_reward_treshold)
         {
             soap_counter = 0;
             RewardSoap();
+            soap_reward_treshold += PlayerPrefs.GetInt("test_population_max");
         }
     }
 

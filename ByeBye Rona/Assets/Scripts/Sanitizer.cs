@@ -125,7 +125,7 @@ public class Sanitizer : Singleton<Sanitizer>
             if (touchPos.x > left_boundary.rectTransform.position.x && touchPos.x < right_boundary.rectTransform.position.x)
             {
                 GameObject bull = Instantiate(projectile);
-                bull.transform.position = new Vector3(transform.position.x, transform.position.y + (.5f* size.y), transform.position.z);
+                bull.transform.position = new Vector3(transform.position.x+ (.09f * size.x), transform.position.y + (.5f* size.y), transform.position.z);
                 AudioManager.instance.Play("SanitizerShoot");
                 StartCoroutine(FireRateController());
             }

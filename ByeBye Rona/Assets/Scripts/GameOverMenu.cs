@@ -10,7 +10,7 @@ public class GameOverMenu : MonoBehaviour
     TextMeshProUGUI game_over_info;
 
     [SerializeField]
-    TextMeshProUGUI high_score_reference;
+    TextMeshProUGUI current_score_reference;
 
     [SerializeField]
     string hint_message;
@@ -25,7 +25,7 @@ public class GameOverMenu : MonoBehaviour
     {
         if (GameController.instance.high_score_acheived)
         {
-            game_over_info.text = new_hs_message + high_score_reference.text;
+            game_over_info.text = new_hs_message + current_score_reference.text;
             StartCoroutine(Yay());
         }
         else

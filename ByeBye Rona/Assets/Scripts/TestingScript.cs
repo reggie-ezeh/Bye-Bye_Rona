@@ -132,6 +132,14 @@ public class TestingScript : MonoBehaviour
     public GameObject population_max_field;
     public GameObject population_max_display;
 
+    public string phase2_health;
+    public GameObject phase2_health_field;
+    public GameObject phase2_health_display;
+
+    public string phase3_health;
+    public GameObject phase3_health_field;
+    public GameObject phase3_health_display;
+
     void Start()
     {
         secs_to_max_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetFloat("test_secs_to_max").ToString();
@@ -174,6 +182,8 @@ public class TestingScript : MonoBehaviour
         phase5_max_expire_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetFloat("test_phase5_max_expire").ToString();
 
         population_max_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("test_population_max").ToString();
+
+        phase2_health_display.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("test_phase2_health").ToString();
     }
 
     public void Goback()
@@ -718,6 +728,40 @@ public class TestingScript : MonoBehaviour
         {
             error_msg.text = "";
             PlayerPrefs.SetInt("test_population_max", flt_ver);
+            StartCoroutine(MessageDisplay(true));
+        }
+        else
+        {
+            StartCoroutine(MessageDisplay(false));
+        }
+    }
+
+    public void Phase2Health()
+    {
+        phase2_health = population_max_field.GetComponent<TextMeshProUGUI>().text;
+        phase2_health = population_max.Substring(0, phase2_health.Length - 1);
+
+        if (int.TryParse(phase2_health, out int flt_ver))
+        {
+            error_msg.text = "";
+            PlayerPrefs.SetInt("test_phase2_health", flt_ver);
+            StartCoroutine(MessageDisplay(true));
+        }
+        else
+        {
+            StartCoroutine(MessageDisplay(false));
+        }
+    }
+
+    public void Phase3Health()
+    {
+        phase3_health = population_max_field.GetComponent<TextMeshProUGUI>().text;
+        phase3_health = population_max.Substring(0, phase3_health.Length - 1);
+
+        if (int.TryParse(phase3_health, out int flt_ver))
+        {
+            error_msg.text = "";
+            PlayerPrefs.SetInt("test_phase3_health", flt_ver);
             StartCoroutine(MessageDisplay(true));
         }
         else

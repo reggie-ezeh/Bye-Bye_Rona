@@ -66,25 +66,11 @@ public class GameController : Singleton<GameController>
         current_virus_population = 0;
         Time.timeScale = 1;
         InitBg();
-
-        //if a high score already exists, display it
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            high_score_text.text = PlayerPrefs.GetFloat("HighScore").ToString("f2");
-            high_score = PlayerPrefs.GetFloat("HighScore");
-            int minutes = Mathf.FloorToInt(high_score / 60f);
-            int seconds = Mathf.FloorToInt(high_score % 60f);
-            int milliseconds = Mathf.FloorToInt(((high_score * 100f) % 100f) / 10);
-            high_score_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("0");
-        }
-        else
-        {
-            high_score_text.text = "0:00";
-        }
+        InitHS();
 
         ////////////////Tester///////////
-        //seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
-        //virus_population_max = PlayerPrefs.GetInt("test_population_max");
+        seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
+        virus_population_max = PlayerPrefs.GetInt("test_population_max");
     }
 
 
@@ -110,6 +96,23 @@ public class GameController : Singleton<GameController>
     {
         playerBg = AllBackgrounds[PlayerPrefs.GetInt("SelectedBackground")];
         BgReference.sprite = playerBg;
+    }
+
+    void InitHS()
+    {
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            high_score_text.text = PlayerPrefs.GetFloat("HighScore").ToString("f2");
+            high_score = PlayerPrefs.GetFloat("HighScore");
+            int minutes = Mathf.FloorToInt(high_score / 60f);
+            int seconds = Mathf.FloorToInt(high_score % 60f);
+            int milliseconds = Mathf.FloorToInt(((high_score * 100f) % 100f) / 10);
+            high_score_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("0");
+        }
+        else
+        {
+            high_score_text.text = "0:00";
+        }
     }
 
     public float GetDifficultyPercent()
@@ -180,10 +183,5 @@ public class GameController : Singleton<GameController>
         high_score_acheived=true;
         PlayerPrefs.SetFloat("HighScore", current_score);
         high_score= PlayerPrefs.GetFloat("HighScore");
-
-        int minutes = Mathf.FloorToInt(high_score / 60f);
-        int seconds = Mathf.FloorToInt(high_score % 60f);
-        int milliseconds = Mathf.FloorToInt((high_score * 100f) % 100f);
-        high_score_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
     }
 }
