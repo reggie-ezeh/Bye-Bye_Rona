@@ -8,26 +8,23 @@ public class PausedMenu : MonoBehaviour
 {
     public void ResumeGame()
     {
+        GameController.instance.playing = true;
         Time.timeScale = 1;
         GameController.instance.is_paused = false;
         gameObject.SetActive(false);
-        AdManager.HideBanner();
-        AdManager.HideBanner();
+        GameController.instance.HideBanner();
     }
 
     public void Restart()
     {
-        AdManager.HideBanner();
         SceneManager.LoadScene(1);
-        AdManager.HideBanner();
+        GameController.instance.HideBanner();
     }
 
     public void Quit()
     {
-        AdManager.HideBanner();
         Time.timeScale = 1;
         SceneManager.LoadScene(0, LoadSceneMode.Single);
-        AdManager.HideBanner();
     }
 
 }

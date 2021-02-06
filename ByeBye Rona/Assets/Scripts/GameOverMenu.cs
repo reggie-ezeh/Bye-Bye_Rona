@@ -75,4 +75,3 @@ public class GameOverMenu : MonoBehaviour
         AudioManager.instance.Play("HighScore");
     }
 }
-

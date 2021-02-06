@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("OpenedMenu", visited);
 
         //////Tester//////
-        //testpanel.SetActive(false);
+        testpanel.SetActive(false);
     }
 
     void Update()

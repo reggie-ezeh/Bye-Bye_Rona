@@ -67,6 +67,7 @@ public class GameController : Singleton<GameController>
         Time.timeScale = 1;
         InitBg();
         InitHS();
+        HideBanner();
 
         ////////////////Tester///////////
         seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
@@ -129,7 +130,6 @@ public class GameController : Singleton<GameController>
             int seconds = Mathf.FloorToInt(current_score % 60f);
             int milliseconds = Mathf.FloorToInt(((current_score * 100f) % 100f)/10);
             timer_text.text = minutes + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("0");
-            AdManager.HideBanner();
         }
     }
 
@@ -137,6 +137,7 @@ public class GameController : Singleton<GameController>
     {
         if (!game_over)
         {
+            playing = false;
             paused_screen.SetActive(true);
             AdManager.ShowBanner();
             Time.timeScale = 0;
@@ -183,5 +184,18 @@ public class GameController : Singleton<GameController>
         high_score_acheived=true;
         PlayerPrefs.SetFloat("HighScore", current_score);
         high_score= PlayerPrefs.GetFloat("HighScore");
+    }
+
+    public void HideBanner()
+    {
+        StartCoroutine(BannerHide());
+    }
+
+    IEnumerator BannerHide() {
+        AdManager.HideBanner();
+        yield return new WaitForSeconds(.5f);
+        AdManager.HideBanner();
+        yield return new WaitForSeconds(.5f);
+        AdManager.HideBanner();
     }
 }

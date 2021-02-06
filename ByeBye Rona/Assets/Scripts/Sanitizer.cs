@@ -77,9 +77,9 @@ public class Sanitizer : Singleton<Sanitizer>
         vaccine_time = PlayerPrefs.GetFloat("VaccineTime");
 
         //////Tester////////
-        //sanitizer_fire_rate = PlayerPrefs.GetFloat("test_sanitizer_fire_rate");
-        //vaccine_fire_rate = PlayerPrefs.GetFloat("test_vaccine_fire_rate");
-        //vaccine_time = PlayerPrefs.GetFloat("test_vaccine_max_time");
+        sanitizer_fire_rate = PlayerPrefs.GetFloat("test_sanitizer_fire_rate");
+        vaccine_fire_rate = PlayerPrefs.GetFloat("test_vaccine_fire_rate");
+        vaccine_time = PlayerPrefs.GetFloat("test_vaccine_max_time");
 
         fire_rate = sanitizer_fire_rate;
     }
