@@ -3262,8 +3262,8 @@ MonoBehaviour:
   mask_button: {fileID: 1242133455}
   vaccine_button: {fileID: 1198397344}
   mask_reward_treshold: 65
-  vaccine_reward_treshold: 65
-  soap_reward_treshold: 75
+  vaccine_reward_treshold: 70
+  soap_reward_treshold: 80
 --- !u!114 &1055068932
 MonoBehaviour:
   m_ObjectHideFlags: 0
