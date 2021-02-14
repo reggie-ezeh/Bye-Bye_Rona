@@ -95,7 +95,7 @@ public class PowerUpController : Singleton<PowerUpController>
         {
             vaccine_counter = 0;
             RewardVaccine();
-            vaccine_reward_treshold += 10;
+            vaccine_reward_treshold += 12;
         }
 
         if (soap_counter >=  soap_reward_treshold)
