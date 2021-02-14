@@ -5526,10 +5526,10 @@ MonoBehaviour:
   killed: 0
   upgradable_virus: 1
   min_time_to_upgrade: 20
-  max_time_to_upgrade: 10
+  max_time_to_upgrade: 12
   upgrade: {fileID: 5245198274147687086, guid: 6932159053b5fd64e8f4d8477dca9e9e, type: 3}
-  min_time_to_expire: 22
-  max_time_to_expire: 25
+  min_time_to_expire: 21
+  max_time_to_expire: 24
   is_boss: 0
   minion: {fileID: 0}
   is_minion: 0

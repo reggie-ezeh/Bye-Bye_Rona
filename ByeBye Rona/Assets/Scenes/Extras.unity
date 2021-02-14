@@ -3959,7 +3959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -128.79999}
+  m_AnchoredPosition: {x: 0, y: -128.80005}
   m_SizeDelta: {x: 0, y: -257.54132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &571905783
@@ -5771,7 +5771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80.70404}
+  m_AnchoredPosition: {x: 0, y: -80.7041}
   m_SizeDelta: {x: 0, y: -161.40851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &844533755
@@ -7392,7 +7392,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 115.799805, y: -88.6001}
-  m_SizeDelta: {x: 231.54938, y: 177.24341}
+  m_SizeDelta: {x: 231.54938, y: 196.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987099467
 MonoBehaviour:
@@ -8163,7 +8163,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"https://thenounproject.com/term/leaderboard/1661028/"'
+          m_StringArgument: '"https://icons8.com/icons/set/leaderboard"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1076629563
@@ -8185,7 +8185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://thenounproject.com/term/leaderboard/1661028/
+  m_text: https://icons8.com/icons/set/leaderboard
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9022,8 +9022,8 @@ RectTransform:
   m_Father: {fileID: 956296392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7044689}
-  m_AnchorMax: {x: 1, y: 0.99998444}
+  m_AnchorMin: {x: 0, y: 0.3521122}
+  m_AnchorMax: {x: 1, y: 0.6478881}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9737,7 +9737,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"https://coronavirus.jhu.edu/map.html"'
+          m_StringArgument: '"https://reggieezeh.com/bye-bye-rona/bbr-privacy-policy/"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1354409346
@@ -10189,8 +10189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.5999756, y: -0.018249512}
-  m_SizeDelta: {x: 43.821404, y: -0.036315918}
+  m_AnchoredPosition: {x: 1.5999756, y: 0}
+  m_SizeDelta: {x: 43.821404, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413242265
 MonoBehaviour:
@@ -10234,8 +10234,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1211311464}
   m_HandleRect: {fileID: 1211311463}
   m_Direction: 2
-  m_Value: 0.99997795
-  m_Size: 0.29551554
+  m_Value: 0.50000024
+  m_Size: 0.29577592
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13512,7 +13512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00032806396, y: -597}
+  m_AnchoredPosition: {x: -0.00032806396, y: -0.00048828125}
   m_SizeDelta: {x: 1307.5713, y: 1694.9313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887642742
@@ -13539,13 +13539,13 @@ MonoBehaviour:
     around you. Please follow best practices such as social distancing, washing/
     sanitizing your hands, minimizing human contact as much as possible, and wearing
     face masks when out in public. This game depicts how quick and easily this virus
-    spread and how difficult it is to contain, so please don\u2019t let your guard
+    spreads and how difficult it is to contain, so please don\u2019t let your guard
     down!\r\n\nEven though we are all soldiers in this battle, we should pay respect
     to those who are on the frontlines such as health care workers and organizations
     like the World Health Organization (WHO). Responding to a health crisis on this
     scale requires that every country is well equipped to cope with treating patients
     and managing the spread of the virus. WHO plays a huge role in doing this. It
-    is important that we support WHO in whatever way we can.\n \r\nIn playing ByeBye
+    is important that we support WHO in whatever way we can.\n \r\nIn playing Bye-Bye
     Rona, you are helping to support WHO because 100% of ad revenue generated from
     this game will be donated to the organization. If you\u2019re feeling generous
     and would like support the WHO in their fight against COVID-19, please click
@@ -13624,7 +13624,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 3.7102535, w: 0}
   m_textInfo:
     textComponent: {fileID: 1887642742}
-    characterCount: 1237
+    characterCount: 1239
     spriteCount: 0
     spaceCount: 218
     wordCount: 215
@@ -13769,7 +13769,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Creaticca Creative Agency from the Noun Project
+  m_text: Icon by Icons8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14326,7 +14326,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"https://www.linkedin.com/in/reginald-ezeh-18592818a/"'
+          m_StringArgument: '"https://reggieezeh.com"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2011098393
@@ -14348,7 +14348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://www.linkedin.com/in/reginald-ezeh-18592818a/
+  m_text: https://reggieezeh.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14990,10 +14990,10 @@ RectTransform:
   m_Father: {fileID: 1728514514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000011444092, y: -250.43945}
-  m_SizeDelta: {x: 1379.7213, y: 500.87854}
+  m_AnchoredPosition: {x: -0.000011444092, y: 0}
+  m_SizeDelta: {x: 1379.7213, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2117721732
 MonoBehaviour:

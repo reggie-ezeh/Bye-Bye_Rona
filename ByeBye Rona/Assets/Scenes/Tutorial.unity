@@ -1725,15 +1725,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "After a while, if a virus is left untouched by the sanitizer after birth
-    then the virus will mutate to a more powerful phase. You can prevent a virus
-    from mutating by shooting it at least once. (A health bar would appear above
-    the virus once you hit it)\r\n\r\nPhase one mutates to phase two, two to three,
-    and three to the Boss phase. Viruses will mutate faster as time progresses. \r\n\r\nThe
-    Boss phase is the final phase a virus can take on so they do not mutate.\r\nHowever,
-    the boss will continuously create smaller minions of themselves until they are
-    eliminated. These minions are non-threatening and can\u2019t mutate, but they
-    still add to the overall population of viruses.\r\n"
+  m_text: "If a virus is left untouched by the sanitizer after birth, then the virus
+    will mutate to a more powerful phase. You can prevent a virus from mutating by
+    shooting it at least once. (A health bar would appear above the virus once you
+    hit it)\r\n\r\nPhase one mutates to phase two, two to three, and three to the
+    Boss phase. Viruses will mutate faster as time progresses. \r\n\r\nThe Boss phase
+    is the final phase a virus can take on, they never mutate.\r\nHowever, the boss
+    will continuously create smaller minions of themselves until they are eliminated.
+    These minions do not mutate either, but they still add to the overall population
+    of viruses.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -1808,14 +1808,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 291728946}
-    characterCount: 656
+    characterCount: 638
     spriteCount: 0
-    spaceCount: 119
-    wordCount: 116
+    spaceCount: 116
+    wordCount: 113
     linkCount: 0
     lineCount: 11
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3845,7 +3845,7 @@ MonoBehaviour:
   m_text: Your mission in the game is straightforward. Keep the virus population
     under control for as long as you can by killing the viruses. The Virus Population
     meter shows how many viruses are currently alive and posing a threat to your
-    environment. If the number of viruses exceeds the population max then the game
+    environment. If the number of viruses exceeds the population max, then the game
     is over. The longer you keep the virus population under control, the higher your
     score.
   m_isRightToLeft: 0
@@ -6563,11 +6563,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You will have the ability to summon three other members of the sanitation
-    team each game; Mighty Mask, Vicious Vaccine, and Sovereign Soap. After using
-    a PowerUp, it will be unavailable until you have killed enough viruses to regenerate
-    it, be strategic with your decisions. All powerups can be upgraded from the options
-    menu.
+  m_text: 'You will have the ability to summon three other members of the sanitation
+    team each game: Mighty Mask, Vicious Vaccine, and Sovereign Soap. After using
+    a PowerUp it will be unavailable until you have killed enough viruses (without
+    the help of a PowerUp) to regenerate it, be strategic with your decisions. All
+    powerups can be upgraded from the options menu.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -7307,10 +7307,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You will be playing as Super Sanitizer from the sanitation team. Super
-    sanitizer\u2019s main function is to shoot sanitize pallets at the viruses. Simply
-    place and drag your finger sideways across the screen to move super sanitizer
-    and make it shoot upwards at the viruses. "
+  m_text: "You will be playing as Super-Sanitizer from the sanitation team. The sanitizer\u2019s
+    main function is to shoot sanitize pallets at the viruses. Simply place and drag
+    your finger sideways on the screen to move super sanitizer and make it shoot
+    upwards at the viruses"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -10003,10 +10003,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The main viruses that will be born (spawned) into the game are the phases
-    one, two, and three viruses. The rate at which viruses are born will increase
-    as time progresses. Phase one viruses are born most frequently, phase two less
-    frequently, and phase 3 least frequently. '
+  m_text: The main viruses that will be born (spawned) into the game are the phases
+    one, two, and three viruses. Phase one viruses are born most frequently, phase
+    two less frequently and phase 3 least frequently. The rate at which viruses are
+    born will increase as time goes on.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -10159,11 +10159,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When summoned, the vaccine will take the position of the sanitizer and
-    you will play as the vaccine. The vaccine has the ability to kill ANY virus with
-    one shot. Shots from the vaccine are also larger than that of the sanitizer,
-    so when aimed right you could kill multiple viruses at once. The vaccine will
-    be available for a certain number of seconds based on its upgrade level. '
+  m_text: When summoned, the vaccine will take the position of the sanitizer and
+    you will play as the vaccine. The vaccine can kill ANY virus with one shot. Shots
+    from the vaccine are also larger than that of the sanitizer, so when aimed right
+    you could kill multiple viruses at once. The vaccine will be available for a
+    certain number of seconds based on its upgrade level.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,
@@ -10392,11 +10392,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Due to the nature of viruses, ALL viruses (including boss and minions)
-    eventually die at the end of their lifespan. Stronger viruses (phase), have longer
+    eventually die at the end of their lifespan. Stronger viruses (phase) have longer
     lifespans. Mutating is considered being reborn, so a virus\u2019 lifespan will
     reset once it has mutated. Hint: A useful tactic could be to hit a virus at least
-    once (so they can\u2019t mutate) and wait for them to die naturally. However,
-    be aware that while a virus is alive it adds to the overall population of viruses. "
+    once so they cannot upgrade and wait for them to die naturally. However, be aware
+    that while a virus is alive it adds to the overall population of viruses."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a017aecb54e6a0f4fbf944833cac4616, type: 2}
   m_sharedMaterial: {fileID: 6639801252839994912, guid: a017aecb54e6a0f4fbf944833cac4616,

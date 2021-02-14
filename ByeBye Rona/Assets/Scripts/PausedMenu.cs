@@ -18,7 +18,6 @@ public class PausedMenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(1);
-        GameController.instance.HideBanner();
     }
 
     public void Quit()

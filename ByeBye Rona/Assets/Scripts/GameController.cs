@@ -70,7 +70,7 @@ public class GameController : Singleton<GameController>
         HideBanner();
 
         ////////////////Tester///////////
-        seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
+        //seconds_to_max_difficulty = PlayerPrefs.GetFloat("test_secs_to_max");
         //virus_population_max = PlayerPrefs.GetInt("test_population_max");
     }
 
@@ -192,10 +192,13 @@ public class GameController : Singleton<GameController>
     }
 
     IEnumerator BannerHide() {
-        AdManager.HideBanner();
-        yield return new WaitForSeconds(.5f);
-        AdManager.HideBanner();
-        yield return new WaitForSeconds(.5f);
-        AdManager.HideBanner();
+        while (!game_over)
+        {
+            if (playing)
+            {
+                AdManager.HideBanner();
+            }
+            yield return new WaitForSeconds(1.5f);
+        }
     }
 }
